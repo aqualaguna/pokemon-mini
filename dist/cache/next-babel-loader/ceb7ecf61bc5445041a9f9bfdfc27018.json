@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  pokemon_url: 'https://graphql-pokeapi.vercel.app/api/graphql'\n};","map":null,"metadata":{},"sourceType":"module"}

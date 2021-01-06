@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "pokemon-mini",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.0",
+    "autoprefixer": "^10.1.0",
+    "framer-motion": "^3.1.4",
+    "next": "10.0.4",
+    "postcss": "^8.2.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-infinite-scroll-component": "^5.1.0",
+    "react-loading-skeleton": "^2.1.1",
+    "react-responsive": "^8.2.0",
+    "react-responsive-carousel": "^3.2.11",
+    "react-sidebar": "^3.0.2",
+    "react-toastify": "^6.2.0",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/react-sidebar": "^3.0.0",
+    "@types/node": "^14.14.19",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.3"
   }
 }
