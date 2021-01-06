@@ -2,15 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navigation from '../components/Navigation'
 import React, { useEffect, useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
 
 import toTitleCase from '../helper/TitleCase';
 import ImageLoader from '../components/ImageLoader';
-import PokemonSkeleton from '../components/PokemonSkeleton';
 import { useRouter } from 'next/router'
-import requestListPokemon from '../graphql/requestListPokemon';
 import Loader from '../components/Loader';
-import { getOwnedPokemon } from '../storage';
+import { deleteOwnedPokemon, getOwnedPokemon } from '../storage';
+import { motion } from 'framer-motion';
 
 
 export default function MyPokemon() {
@@ -37,9 +35,16 @@ export default function MyPokemon() {
                                 className="flex flex-wrap w-full"
                             >
                                 {listPokemon.map((pokemon, index) => (
-                                    <div className="p-2 w-full sm:w-full md:w-1/3 lg:w-2/12 transform hover:-translate-y-1 hover:scale-110 transition duration-500 ease-in-out hover:ring-red" key={index}>
+                                    <div className="p-2 w-full sm:w-full md:w-1/3 lg:w-2/12 transform" key={index}>
                                         <article className="w-full overflow-hidden rounded-lg shadow hover:shadow-lg hover:text-pokeball">
-
+                                            <motion.img
+                                                onClick={() => { deleteOwnedPokemon(pokemon.name); updateListPokemon(getOwnedPokemon()); }}
+                                                whileHover={{
+                                                    scale: 1.2
+                                                }}
+                                                whileTap={{ scale: 1.1 }}
+                                                style={{ position: 'absolute', top: '30px', right: '30px' }}
+                                                height="30" width="30" src="https://cdn2.iconfinder.com/data/icons/medical-and-health-2-16/65/64-512.png" />
 
                                             <ImageLoader
                                                 style={{}}
